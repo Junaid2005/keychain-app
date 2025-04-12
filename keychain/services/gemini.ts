@@ -9,9 +9,6 @@ export async function getAIResponse(conversationHistory: Message[]): Promise<str
     .map((msg) => `${msg.sender}: ${msg.text}`)
     .join("\n");
 
-  console.log(conversationHistory)
-  console.log(conversation)
-
   const prompt = GEMINI_PROMPT + `\nHere is the conversation history:\n${conversation}\nPlease respond to the latest message.`;
 
   const response = await ai.models.generateContent({
