@@ -8,6 +8,7 @@ from mangum import Mangum  # This is necessary to make FastAPI work with AWS Lam
 origins = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
+    "https://keychain-xyz.vercel.app",
 ]
 
 app = FastAPI()
