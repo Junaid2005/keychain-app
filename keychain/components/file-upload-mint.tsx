@@ -2,7 +2,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 interface FileUploadType {
-  json?: any;
+  json: Record<string, unknown>;
 }
 
 export function FileUpload({ json }: FileUploadType) {
