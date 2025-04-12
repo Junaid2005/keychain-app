@@ -1,0 +1,57 @@
+# Python Bytecode Files
+*.pyc
+*.pyo
+__pycache__/
+
+# Virtual Environment Folders
+venv/
+env/
+ENV/
+.venv/
+.virtualenv/
+
+# Distribution / Packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# PyInstaller
+#  Typically you would store your PyInstaller logs in this folder
+*.manifest
+*.spec
+
+# IDE or Editor directories
+.vscode/
+.idea/
+
+# Python-specific configurations and environments
+*.env
+*.venv
+.env/
+*.sqlite3
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Coverage reports
+.coverage
+.coverage.*
+*.coveragerc
+
+# mypy
+.mypy_cache/
+
+# Pytest
+.pytest_cache/
+
+# Sphinx documentation
+_docs/_build/
+
+# Pycharm and other IDE-specific
+# .idea/
+# .vscode/
+
+# Docker
+docker-compose.yml
+Dockerfile
