@@ -6,6 +6,8 @@ import ReactMarkdown from "react-markdown";
 import React, { useState, useEffect, useRef } from "react";
 
 import { getAIResponse } from "@/services/gemini";
+import { isJSON } from "@/helpers/helpers";
+import { FileUpload } from "@/components/file-upload-mint";
 
 export interface Message {
   sender: 'User' | 'Bot';
@@ -19,6 +21,7 @@ const ChatApp: React.FC = () => {
 
   // Function to simulate typing animation for the bot's message
   const simulateTyping = (response: string) => {
+    if (isJSON(response)) {return;}
     let index = 0;
     const interval = setInterval(() => {
       setMessages((messages) => {
@@ -72,7 +75,7 @@ const ChatApp: React.FC = () => {
 
   // Trigger typing effect for the initial message when the component mounts
   useEffect(() => {
-    const initialMessage = "Welcome to Keychain! How can I help you today?";
+    const initialMessage = "Welcome to Keychain! How can I help you today? You can either mint or sell your own music as an NFT!";
     setMessages([{ sender: "Bot", text: initialMessage }]); // Start with a welcome message
   }, []); // This will only run once when the component mounts
 
@@ -83,10 +86,19 @@ const ChatApp: React.FC = () => {
           {messages.map((msg, index) => (
             <div
               key={index}
-              className={`flex ${msg.sender === "User" ? "justify-end" : "justify-start"}`}
+              className={`flex ${msg.sender === 'User' ? 'justify-end' : 'justify-start'}`}
             >
               <Card className="message p-2">
-                <ReactMarkdown>{msg.text}</ReactMarkdown>
+                {/* Check if it's JSON and the sender is "Bot" */}
+                {isJSON(msg.text) && msg.sender === "Bot" ? (
+                  index === messages.length - 1 ? (
+                    <FileUpload json={isJSON(msg.text)}/>
+                  ) : (
+                    <span>File Uploaded</span>
+                  )
+                ) : (
+                  <ReactMarkdown>{msg.text}</ReactMarkdown>
+                )}
               </Card>
             </div>
           ))}
