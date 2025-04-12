@@ -53,7 +53,7 @@ const PhantomWalletIntegration = () => {
   };
 
   return (
-    <div className="absolute top-5 right-1 flex items-center space-x-4">
+    <div className="absolute top-5 right-15 flex items-center space-x-4">
       {/* If connected, show the obfuscated address */}
       {connected && walletAddress && (
         <Label>
