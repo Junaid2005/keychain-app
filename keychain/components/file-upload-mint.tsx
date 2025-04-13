@@ -41,8 +41,8 @@ interface MintResponse {
   [key: string]: unknown;
 }
 
-const UPLOAD_SERVER_URL = "http://20.117.181.22:4000";
-const MINT_SERVER_URL = "http://20.117.181.22:8000";
+const UPLOAD_SERVER_URL = "http://20.117.181.22:4050";
+const MINT_SERVER_URL = "http://20.117.181.22:8050";
 
 export function FileUpload({ json }: FileUploadMintProps) {
   const [status, setStatus] = useState<string>("");
