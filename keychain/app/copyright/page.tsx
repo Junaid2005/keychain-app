@@ -7,9 +7,9 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
-export type AICopyrightType = {
+interface AICopyrightType {
     account?: string;
-  };
+};
 
 // Initialize Supabase client
 const supabaseUrl = "https://xfnlmjtqpuejpdxqwylp.supabase.co";
