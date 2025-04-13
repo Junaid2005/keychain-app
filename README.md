@@ -7,6 +7,8 @@ Made by our lovely team of cofounders Abdul, Junaid, Walid, Ahmed and Jack :)
 ## Description
 
 Artists face challenges with traditional music licensing: limited transparency, slow payments, inefficient copyright protection, and rigid pricing. Keychain Music Licensing overcomes these issues by merging blockchain technology with autonomous AI, offering a streamlined, transparent, and data-driven solution.
+![Alt Text](2025-04-13 10-41-56.gif)
+
 
 ## Technical Overview
 
