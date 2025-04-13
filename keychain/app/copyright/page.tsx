@@ -17,7 +17,7 @@ const supabase = createClient(supabaseUrl, supabaseAnonKey);
 const AICopyright = () => {
   const [plagiarisedNfts, setPlagiarisedNfts] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
-  const { account, balance, connectWallet } = useWallet();  // Get wallet state from context
+  const { account, connectWallet } = useWallet();  // Get wallet state from context
 
   useEffect(() => {
     if (!account) {
@@ -95,7 +95,3 @@ const AICopyright = () => {
 }
 
 export default AICopyright;
-function connectWallet() {
-  throw new Error("Function not implemented.");
-}
-
