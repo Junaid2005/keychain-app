@@ -17,7 +17,7 @@ const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABAKSE_KEY || "";
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 function AICopyright({ account }: AICopyrightType) {
-  const [plagiarisedNfts, setPlagiarisedNfts] = useState<any[]>([]);
+  const [plagiarisedNfts, setPlagiarisedNfts] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -40,6 +40,7 @@ function AICopyright({ account }: AICopyrightType) {
         const plagiarised = JSON.parse(data?.[0]?.data || '{}')?.plagiarised || [];
         setPlagiarisedNfts(plagiarised);
       } catch (err) {
+        console.log("Error fetching NFTs:", err);
         toast.error("Failed to fetch NFTs.");
       } finally {
         setLoading(false);
