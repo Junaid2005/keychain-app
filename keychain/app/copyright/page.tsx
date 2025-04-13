@@ -20,7 +20,7 @@ const AICopyright = () => {
 
   useEffect(() => {
     if (!account) {
-      toast.error("No wallet conncted");
+      toast.error("No wallet connected");
       setLoading(false);
       return;
     }
