@@ -8,8 +8,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 export type AICopyrightType = {
-  account: string;
-};
+    account?: string;
+  };
 
 // Initialize Supabase client
 const supabaseUrl = "https://xfnlmjtqpuejpdxqwylp.supabase.co";
