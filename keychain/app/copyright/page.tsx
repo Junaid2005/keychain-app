@@ -16,7 +16,7 @@ const supabaseUrl = "https://xfnlmjtqpuejpdxqwylp.supabase.co";
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABAKSE_KEY || "";
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-function AICopyright({ account }: AICopyrightType) {
+const AICopyright = ({ account }: AICopyrightType) => {
   const [plagiarisedNfts, setPlagiarisedNfts] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
 
