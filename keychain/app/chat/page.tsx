@@ -27,7 +27,7 @@ const ChatApp: React.FC = () => {
     {href: 'chat', text: 'Chat', underline: true},
     {href: 'copyright', text: 'Copyright Checker'},
     {href: 'catalogue', text: 'Catalogue'},
-  ] 
+  ]
 
   // Function to simulate typing animation for the bot's message
   const simulateTyping = (response: string) => {
@@ -82,7 +82,7 @@ const ChatApp: React.FC = () => {
       messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [messages]);
-
+  
   // Trigger typing effect for the initial message when the component mounts
   useEffect(() => {
     const initialMessage = "Welcome to Keychain! How can I help you today? You can either mint or sell your own music as an NFT!";
