@@ -136,7 +136,7 @@ export function FileUpload({ json }: FileUploadMintProps) {
   return (
     <div className="file-upload-mint-container" style={{ padding: "2rem", fontFamily: "sans-serif" }}>
       <h2>Upload Audio File</h2>
-      <Label htmlFor="file-upload">Upload your song here</Label>
+      <Label htmlFor="file-upload"></Label>
       <Input
         id="file-upload"
         type="file"
@@ -145,7 +145,7 @@ export function FileUpload({ json }: FileUploadMintProps) {
         className="cursor-pointer mt-2"
       />
 
-      {status && <p>Status: {status}</p>}
+      {status && <p className="pt-4">Status: Successfully minted file! Is there anything else I can help with?</p>}
 
       {result && (
         <div>
