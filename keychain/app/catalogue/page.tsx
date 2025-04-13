@@ -7,8 +7,6 @@ import { Button } from "@/components/ui/button"
 import { Card } from '@/components/ui/card'
 import Image from 'next/image'
 import { getAudioCatalogue } from '@/services/audio-catalogue'
-import Link from 'next/link'
-import PhantomWalletIntegration from '@/components/wallet'
 import { ArrowUpTrayIcon } from '@heroicons/react/24/outline';
 import HeaderBar from '@/components/header-bar'
 import ThemeImage from '@/components/logo'
