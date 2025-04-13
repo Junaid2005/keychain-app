@@ -10,11 +10,22 @@ import { getAudioCatalogue } from '@/services/audio-catalogue'
 import Link from 'next/link'
 import PhantomWalletIntegration from '@/components/wallet'
 import { ArrowUpTrayIcon } from '@heroicons/react/24/outline';
+import HeaderBar from '@/components/header-bar'
+import ThemeImage from '@/components/logo'
+import HeaderLink from '@/components/header-links'
+import { ThemeToggle } from '@/components/theme-toggle'
 
 
 export default function CataloguePage() {
   const [searchQuery, setSearchQuery] = useState('')
   const [currentPage, setCurrentPage] = useState(1)
+
+  const leftHeaderLinks = [
+    {href: 'chat', text: 'Chat'},
+    {href: 'copyright', text: 'Copyright Checker'},
+    {href: 'catalogue', text: 'Catalogue', underline: true},
+  ] 
+
   const itemsPerPage = 12
 
   const audioItems = getAudioCatalogue()
@@ -39,16 +50,20 @@ export default function CataloguePage() {
 
   return (
     <div className="min-h-screen p-16">
-      {/* Header Section */}
-      <PhantomWalletIntegration/>
-
-      {/* Title Section */}
-      <Link href="/" passHref>
-        <Label className="inline-block text-4xl font-bold text-center mb-8 hover:cursor-pointer">Keychain</Label>
-      </Link>
+      <HeaderBar leftItems={[
+        <ThemeImage key="themeLogo" />, // Your theme image component
+        ...leftHeaderLinks.map((link, index) => (
+          <HeaderLink
+            key={index} // Add a unique key
+            href={link.href}
+            text={link.text}
+            underline={link.underline}
+          />
+        ))
+      ]} rightItems={[<ThemeToggle key="themeToggle"/>]} />
 
       {/* Search Bar */}
-      <div className="flex justify-center items-center mb-8 space-x-4">
+      <div className="flex justify-center items-center mb-8 space-x-4 mt-4">
         <Input
           type="text"
           value={searchQuery}

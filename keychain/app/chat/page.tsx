@@ -8,6 +8,10 @@ import React, { useState, useEffect, useRef } from "react";
 import { getAIResponse } from "@/services/gemini";
 import { isJSON } from "@/helpers/helpers";
 import { FileUpload } from "@/components/file-upload-mint";
+import HeaderBar from "@/components/header-bar";
+import { ThemeToggle } from "@/components/theme-toggle";
+import ThemeImage from "@/components/logo";
+import HeaderLink from "@/components/header-links";
 
 export interface Message {
   sender: 'User' | 'Bot';
@@ -18,6 +22,12 @@ const ChatApp: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState<string>(''); 
   const messagesEndRef = useRef<HTMLDivElement>(null); // Ref for auto-scrolling to the bottom
+
+  const leftHeaderLinks = [
+    {href: 'chat', text: 'Chat', underline: true},
+    {href: 'copyright', text: 'Copyright Checker'},
+    {href: 'catalogue', text: 'Catalogue'},
+  ] 
 
   // Function to simulate typing animation for the bot's message
   const simulateTyping = (response: string) => {
@@ -81,7 +91,19 @@ const ChatApp: React.FC = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen">
-      <Card className="w-192 h-168 mx-auto flex flex-col justify-between">
+      <HeaderBar leftItems={[
+        <ThemeImage key="themeLogo" />, // Your theme image component
+        ...leftHeaderLinks.map((link, index) => (
+          <HeaderLink
+            key={index} // Add a unique key
+            href={link.href}
+            text={link.text}
+            underline={link.underline}
+          />
+        ))
+      ]} rightItems={[<ThemeToggle key="themeToggle"/>]} />
+
+      <Card className="w-192 h-168 mx-auto flex flex-col justify-between mt-12">
         <div className="messages px-8 space-y-4 max-h-120 overflow-y-auto">
           {messages.map((msg, index) => (
             <div

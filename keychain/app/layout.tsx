@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider"
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { Toaster } from "@/components/ui/sonner"
 import { WalletProvider } from "@/context/WalletContext";
 
@@ -39,7 +38,6 @@ export default function RootLayout({
           >
             <WalletProvider>
             <Toaster />
-            <ThemeToggle></ThemeToggle>
             {children}
             </WalletProvider>
           </ThemeProvider>
