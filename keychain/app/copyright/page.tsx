@@ -7,18 +7,16 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
-interface AICopyrightType {
-    account?: string;
-};
-
 // Initialize Supabase client
 const supabaseUrl = "https://xfnlmjtqpuejpdxqwylp.supabase.co";
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABAKSE_KEY || "";
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-const AICopyright = ({ account }: AICopyrightType) => {
+const AICopyright = () => {
   const [plagiarisedNfts, setPlagiarisedNfts] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
+
+  const account = process.env.REACT_APP_WALLET_ADDRESS || "";
 
   useEffect(() => {
     if (!account) {
