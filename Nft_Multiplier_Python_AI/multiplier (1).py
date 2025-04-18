@@ -2,7 +2,7 @@ import requests
 import time
 import google.generativeai as genai
 
-GEMINI_API_KEY = ""
+GEMINI_API_KEY = "AIzaSyAdMCRkNHiXv3x701jdDQQZA4e5r3bT7vk"
 
 # Set up the Gemini API and model
 genai.configure(api_key=GEMINI_API_KEY)
