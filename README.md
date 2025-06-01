@@ -16,6 +16,7 @@ Artists face challenges with traditional music licensing: limited transparency, 
 ![oaicite:18](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![oaicite:20](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 ![oaicite:22](https://img.shields.io/badge/Solidity-e6e6e6?style=for-the-badge&logo=solidity&logoColor=black)
+![oaicite:6](https://github.com/Junaid2005/keychain-app/blob/main/polygon.png?raw=true)
 ![Music Licensing Demo](2025-04-13%2010-41-56.gif)
 
 ---
